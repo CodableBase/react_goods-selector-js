@@ -18,7 +18,7 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
 
-  const handleSelectGood = (good) => {
+  const handleSelectGood = good => {
     setSelectedGood(good);
   };
 
@@ -42,7 +42,7 @@ export const App = () => {
 
       <table className="table">
         <tbody>
-          {goods.map((good) => {
+          {goods.map(good => {
             const isSelected = selectedGood === good;
 
             return (
@@ -62,16 +62,14 @@ export const App = () => {
                       -
                     </button>
                   ) : (
-                    !selectedGood && (
-                      <button
-                        data-cy="AddButton"
-                        type="button"
-                        className="button"
-                        onClick={() => handleSelectGood(good)}
-                      >
-                        +
-                      </button>
-                    )
+                    <button
+                      data-cy="AddButton"
+                      type="button"
+                      className="button"
+                      onClick={() => handleSelectGood(good)}
+                    >
+                      +
+                    </button>
                   )}
                 </td>
 
